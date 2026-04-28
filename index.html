@@ -4,970 +4,994 @@
 <meta property="og:title" content="上海牛苏科技有限公司" />
 <meta property="og:description" content="覆盖设备、电力、消防、能源、水务与风险监测的智慧安全解决方案" />
 <meta property="og:image" content="https://overview.niusukeji.com/share-thumb.jpg" />
-
-<meta property="og:url" 
+<meta property="og:url"
 content="https://overview.niusukeji.com/" />
-
 <meta property="og:type" content="website" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>上海牛苏科技有限公司</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <style>
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-            -webkit-tap-highlight-color: rgba(0,0,0,0); 
-        }
-        
-        html, body {
-            width: 100%; 
-            height: 100%;
-            background: #0a1a3a;
-            color: #ffffff;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            overflow: hidden;
-            -webkit-text-size-adjust: none;
-            position: relative;
-        }
-
-        #loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #1a2a4a 0%, #0a1a3a 100%);
-            z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            opacity: 1;
-            transition: opacity 0.8s ease-out;
-        }
-        .loader-logo {
-            width: 180px;
-            border-radius: 20px;
-            animation: pulse 2s infinite;
-            border: 2px solid #4da6ff;
-            box-shadow: 0 0 30px rgba(77, 166, 255, 0.4);
-        }
-        .loader-text {
-            margin-top: 20px;
-            font-size: 1.2rem;
-            letter-spacing: 2px;
-            color: #4da6ff;
-            font-weight: 300;
-            opacity: 0.9;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.05); opacity: 1; }
-            100% { transform: scale(1); opacity: 0.8; }
-        }
-
-        :root {
-            --header-height: 0px;
-        }
-        
-        .swiper {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            z-index: 1;
-            overflow: hidden;
-        }
-        
-        .swiper-wrapper {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-        
-        .swiper-slide {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            height: 100%;
-            padding-top: calc(var(--header-height) + 10px); /* 减小顶部内边距 */
-            padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
-        }
-        
-        .content-container {
-            position: relative;
-            z-index: 10;
-            width: 100%;
-            max-width: 100%;
-            padding: 0 20px;
-            overflow-y: auto; /* 添加滚动 */
-            max-height: calc(100vh - var(--header-height) - 40px); /* 限制高度 */
-        }
-
-        /* === 修复：PPT按钮位置调整 === */
-        .ppt-button-small {
-            position: absolute;
-            bottom: 120px;
-            right: 25px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #4da6ff, #9b59b6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 0.9rem;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(77, 166, 255, 0.4);
-            z-index: 100;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .ppt-button-small:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(77, 166, 255, 0.6);
-        }
-
-        /* === 右侧导航按钮 === */
-        .nav-buttons {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 15px; /* 减小按钮间距 */
-        }
-
-        .nav-button {
-            width: 35px; /* 减小按钮大小 */
-            height: 35px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #4da6ff, #9b59b6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 0.8rem; /* 减小字体大小 */
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(77, 166, 255, 0.4);
-            z-index: 10;
-            transition: all 0.3s ease;
-        }
-
-        .bg-decor {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
-        .bg-decor-1 {
-            background: linear-gradient(135deg, #1a2a4a 0%, #0a1a3a 50%, #1a1a4a 100%);
-            background-image: linear-gradient(45deg, rgba(77, 166, 255, 0.1) 25%, transparent 25%, transparent 75%, rgba(77, 166, 255, 0.1) 75%), linear-gradient(45deg, rgba(138, 43, 226, 0.1) 25%, transparent 25%, transparent 75%, rgba(138, 43, 226, 0.1) 75%);
-            background-size: 60px 60px;
-            background-position: 0 0, 30px 30px;
-        }
-        .bg-decor-2 {
-            background: linear-gradient(135deg, #1a1a4a 0%, #2a1a4a 50%, #3a1a3a 100%);
-        }
-        .bg-decor-3 {
-            background: linear-gradient(135deg, #0a2a3a 0%, #0a1a3a 100%);
-        }
-        .bg-decor-4 {
-            background: linear-gradient(135deg, #2a1a1a 0%, #3a1a1a 100%);
-        }
-        .bg-decor-5 {
-            background: linear-gradient(135deg, #0a2a3a 0%, #0a3a3a 100%);
-        }
-        .bg-decor-6 {
-            background: linear-gradient(135deg, #2a1a1a 0%, #3a2a2a 100%);
-        }
-        .bg-decor-7 {
-            background: linear-gradient(135deg, #0a2a1a 0%, #0a3a2a 100%);
-        }
-        .bg-decor-8 {
-            background: linear-gradient(135deg, #2a1a3a 0%, #3a2a4a 50%, #4a2a3a 100%);
-        }
-        .bg-decor-9 {
-            background: linear-gradient(135deg, #0a2a1a 0%, #0a3a2a 100%);
-        }
-
-        .decoration {
-            position: absolute;
-            pointer-events: none;
-            z-index: 2;
-        }
-        .bubble {
-            position: absolute;
-            border-radius: 50%;
-            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), transparent 70%);
-            box-shadow: 0 0 20px rgba(77, 166, 255, 0.3), inset 0 0 10px rgba(255, 255, 255, 0.2);
-        }
-        
-        .decor-1-1 {
-            top: 10%;
-            left: 10%;
-            width: 150px;
-            height: 150px;
-            background: rgba(77, 166, 255, 0.2);
-        }
-        .decor-1-2 {
-            bottom: 10%;
-            right: 10%;
-            width: 120px;
-            height: 120px;
-            background: rgba(138, 43, 226, 0.2);
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-        }
-        .decor-1-3 {
-            top: 50%;
-            right: 15%;
-            width: 200px;
-            height: 200px;
-        }
-        .decor-1-3 .bubble {
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .fade-in-text {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        .swiper-slide-active .fade-in-text {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .fade-in-text.delay-1 { transition-delay: 0.1s; }
-        .fade-in-text.delay-2 { transition-delay: 0.2s; }
-        .fade-in-text.delay-3 { transition-delay: 0.3s; }
-        .fade-in-text.delay-4 { transition-delay: 0.4s; }
-
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            background: linear-gradient(90deg, #4da6ff, #9b59b6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1.2;
-        }
-        h2 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 25px;
-            color: #4da6ff;
-            line-height: 1.3;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        
-        p {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: #e0e0e0;
-            margin-bottom: 20px;
-            text-align: justify;
-        }
-        .highlight {
-            color: #4da6ff;
-            font-weight: bold;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(12px);
-            border-radius: 18px;
-            padding: 30px 25px; /* 减小内边距 */
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4), 0 0 20px rgba(77, 166, 255, 0.1);
-            text-align: left;
-            position: relative;
-            overflow: hidden;
-            margin-top: 20px; /* 减小外边距 */
-            width: 100%;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        /* === 修复：目录界面比例问题 === */
-        .directory {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 0 5px; /* 减小左右内边距 */
-        }
-        .directory-item {
-            display: flex;
-            align-items: center;
-            padding: 15px 20px; /* 减小内边距 */
-            margin-bottom: 12px; /* 减小外边距 */
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 14px; /* 减小圆角 */
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            width: 100%;
-            position: relative;
-            overflow: hidden;
-            word-break: break-word;
-            box-sizing: border-box;
-            min-height: 60px; /* 设置最小高度 */
-        }
-        .directory-item .number {
-            width: 30px; /* 减小数字大小 */
-            height: 30px;
-            line-height: 30px;
-            font-size: 1rem;
-            margin-right: 15px; /* 减小右边距 */
-        }
-        .directory-item .title {
-            font-size: 1.1rem; /* 减小字体大小 */
-            font-weight: 500; /* 减小字重 */
-        }
-        .directory-item .arrow {
-            font-size: 1.2rem; /* 减小箭头大小 */
-        }
-
-        /* === 修复：第六模块标签布局 === */
-        .tags-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px 10px; /* 设置行间距和列间距 */
-            justify-content: center;
-            margin-top: 25px;
-            width: 100%;
-        }
-        .tag {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 6px 16px; /* 减小内边距 */
-            border-radius: 20px; /* 减小圆角 */
-            font-size: 0.85rem; /* 减小字体大小 */
-            background: linear-gradient(135deg, rgba(77, 166, 255, 0.2), rgba(138, 43, 226, 0.2));
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-            min-width: 90px; /* 设置最小宽度 */
-            text-align: center;
-        }
-        .tag:hover {
-            transform: scale(1.05);
-            background: linear-gradient(135deg, rgba(77, 166, 255, 0.3), rgba(138, 43, 226, 0.3));
-            border-color: rgba(77, 166, 255, 0.5);
-        }
-
-        .module-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #4da6ff, #9b59b6);
-            border-radius: 50%;
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: white;
-            box-shadow: 0 0 15px rgba(77, 166, 255, 0.4);
-        }
-        .module-title {
-            font-size: 1.6rem;
-            font-weight: 700;
-            background: linear-gradient(90deg, #4da6ff, #9b59b6, #ff6b6b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1.2;
-            margin: 0;
-        }
-
-        .future-title {
-            font-size: 2.8rem !important;
-            margin-bottom: 40px !important;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-        }
-        .future-title .module-number {
-            width: 45px;
-            height: 45px;
-            font-size: 1.2rem;
-        }
-        .future-card {
-            text-align: center;
-            border: none;
-            background: linear-gradient(135deg, rgba(255, 107, 107, 0.15), rgba(77, 166, 255, 0.15));
-            padding: 35px 30px !important;
-            margin-top: 25px;
-        }
-        .vision-text {
-            font-size: 1.3rem;
-            line-height: 1.7;
-            margin-bottom: 20px;
-            color: #fff;
-        }
-        .vision-highlight {
-            color: #4da6ff;
-            font-weight: bold;
-        }
-        .vision-conclusion {
-            font-size: 1.6rem;
-            font-weight: 600;
-            background: linear-gradient(90deg, #4da6ff, #9b59b6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1.5;
-            margin-top: 25px;
-        }
-
-        @media (max-width: 600px) {
-            .ppt-button-small {
-                width: 45px;
-                height: 45px;
-                font-size: 0.8rem;
-                bottom: 90px; /* 再上移一点 */
-                right: 15px;
-            }
-            
-            .nav-button {
-                width: 30px;
-                height: 30px;
-                font-size: 0.75rem;
-            }
-            
-            .module-number {
-                width: 35px;
-                height: 35px;
-                font-size: 1rem;
-            }
-            .module-title {
-                font-size: 1.4rem;
-            }
-            .future-title {
-                font-size: 2.2rem !important;
-                flex-direction: column;
-                gap: 15px;
-            }
-            .future-title .module-number {
-                width: 40px;
-                height: 40px;
-                font-size: 1.1rem;
-            }
-            .future-card {
-                padding: 30px 25px !important;
-            }
-            .vision-text {
-                font-size: 1.1rem;
-            }
-            .vision-conclusion {
-                font-size: 1.4rem;
-            }
-            
-            /* 优化小屏目录 */
-            .directory {
-                width: 100%;
-                padding: 0 3px;
-            }
-            .directory-item {
-                padding: 12px 18px;
-                font-size: 0.9rem;
-                min-height: 50px;
-            }
-            .directory-item .number {
-                width: 28px;
-                height: 28px;
-                line-height: 28px;
-                font-size: 0.95rem;
-            }
-            .directory-item .title {
-                font-size: 1rem;
-            }
-            
-            /* 优化第六模块标签布局 */
-            .tags-container {
-                gap: 6px 8px;
-                margin-top: 20px;
-            }
-            .tag {
-                padding: 5px 14px;
-                font-size: 0.8rem;
-                min-width: 85px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>上海牛苏科技有限公司</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+html, body {
+width: 100%;
+height: 100%;
+background: #0a1a3a;
+color: #ffffff;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+overflow: hidden;
+-webkit-text-size-adjust: none;
+position: relative;
+}
+#loading-screen {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: linear-gradient(135deg, #1a2a4a 0%, #0a1a3a 100%);
+z-index: 9999;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+opacity: 1;
+transition: opacity 0.8s ease-out;
+}
+.loader-logo {
+width: 180px;
+border-radius: 20px;
+animation: pulse 2s infinite;
+border: 2px solid #4da6ff;
+box-shadow: 0 0 30px rgba(77, 166, 255, 0.4);
+}
+.loader-text {
+margin-top: 20px;
+font-size: 1.2rem;
+letter-spacing: 2px;
+color: #4da6ff;
+font-weight: 300;
+opacity: 0.9;
+}
+@keyframes pulse {
+0% { transform: scale(1); opacity: 0.8; }
+50% { transform: scale(1.05); opacity: 1; }
+100% { transform: scale(1); opacity: 0.8; }
+}
+:root {
+--header-height: 0px;
+}
+.swiper {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100vh;
+z-index: 1;
+overflow: hidden;
+}
+.swiper-wrapper {
+position: relative;
+width: 100%;
+height: 100%;
+}
+.swiper-slide {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 20px;
+text-align: center;
+position: relative;
+overflow: hidden;
+width: 100%;
+height: 100%;
+padding-top: calc(var(--header-height) + 20px); /* 增加顶部内边距 */
+padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+}
+.content-container {
+position: relative;
+z-index: 100; /* 提高z-index确保内容在最上层 */
+width: 100%;
+max-width: 100%;
+padding: 0 20px;
+overflow-y: auto; /* 添加滚动 */
+max-height: calc(100vh - var(--header-height) - 40px); /* 限制高度 */
+}
+/* === PPT按钮位置调整 === */
+.ppt-button-small {
+position: absolute;
+bottom: 120px;
+right: 25px;
+width: 50px;
+height: 50px;
+border-radius: 50%;
+background: linear-gradient(135deg, #4da6ff, #9b59b6);
+display: flex;
+align-items: center;
+justify-content: center;
+color: white;
+font-size: 0.9rem;
+font-weight: bold;
+cursor: pointer;
+box-shadow: 0 4px 15px rgba(77, 166, 255, 0.4);
+z-index: 100;
+transition: all 0.3s ease;
+border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.ppt-button-small:hover {
+transform: scale(1.05);
+box-shadow: 0 6px 20px rgba(77, 166, 255, 0.6);
+}
+.bg-decor {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+pointer-events: none;
+z-index: 1;
+}
+.bg-decor-1 {
+background: linear-gradient(135deg, #1a2a4a 0%, #0a1a3a 50%, #1a1a4a 100%);
+background-image: linear-gradient(45deg, rgba(77, 166, 255, 0.1) 25%, transparent 25%, transparent 75%, rgba(77, 166, 255, 0.1) 75%), linear-gradient(45deg, rgba(138, 43, 226, 0.1) 25%, transparent 25%, transparent 75%, rgba(138, 43, 226, 0.1) 75%);
+background-size: 60px 60px;
+background-position: 0 0, 30px 30px;
+}
+.bg-decor-2 {
+background: linear-gradient(135deg, #1a1a4a 0%, #2a1a4a 50%, #3a1a3a 100%);
+}
+.bg-decor-10 {
+background: linear-gradient(135deg, #1a2a4a 0%, #0a1a3a 50%, #0a2a4a 100%);
+}
+.bg-decor-3 {
+background: linear-gradient(135deg, #0a2a3a 0%, #0a1a3a 100%);
+}
+.bg-decor-4 {
+background: linear-gradient(135deg, #2a1a1a 0%, #3a1a1a 100%);
+}
+.bg-decor-5 {
+background: linear-gradient(135deg, #0a2a3a 0%, #0a3a3a 100%);
+}
+.bg-decor-6 {
+background: linear-gradient(135deg, #2a1a1a 0%, #3a2a2a 100%);
+}
+.bg-decor-7 {
+background: linear-gradient(135deg, #0a2a1a 0%, #0a3a2a 100%);
+}
+.bg-decor-8 {
+background: linear-gradient(135deg, #2a1a3a 0%, #3a2a4a 50%, #4a2a3a 100%);
+}
+.bg-decor-9 {
+background: linear-gradient(135deg, #0a2a1a 0%, #0a3a2a 100%);
+}
+.decoration {
+position: absolute;
+pointer-events: none;
+z-index: 2;
+}
+.bubble {
+position: absolute;
+border-radius: 50%;
+background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), transparent 70%);
+box-shadow: 0 0 20px rgba(77, 166, 255, 0.3), inset 0 0 10px rgba(255, 255, 255, 0.2);
+}
+.decor-1-1 {
+top: 10%;
+left: 10%;
+width: 150px;
+height: 150px;
+background: rgba(77, 166, 255, 0.2);
+}
+.decor-1-2 {
+bottom: 10%;
+right: 10%;
+width: 120px;
+height: 120px;
+background: rgba(138, 43, 226, 0.2);
+clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+.decor-1-3 {
+top: 50%;
+right: 15%;
+width: 200px;
+height: 200px;
+}
+.decor-1-3 .bubble {
+width: 100%;
+height: 100%;
+background: rgba(255, 255, 255, 0.05);
+}
+.fade-in-text {
+opacity: 0;
+transform: translateY(20px);
+transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.swiper-slide-active .fade-in-text {
+opacity: 1;
+transform: translateY(0);
+}
+.fade-in-text.delay-1 { transition-delay: 0.1s; }
+.fade-in-text.delay-2 { transition-delay: 0.2s; }
+.fade-in-text.delay-3 { transition-delay: 0.3s; }
+.fade-in-text.delay-4 { transition-delay: 0.4s; }
+h1 {
+font-size: 2.5rem;
+font-weight: 700;
+margin-bottom: 20px;
+background: linear-gradient(90deg, #4da6ff, #9b59b6);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+line-height: 1.2;
+position: relative; /* 确保标题在最上层 */
+z-index: 101; /* 确保标题z-index最高 */
+}
+h2 {
+font-size: 1.8rem;
+font-weight: 600;
+margin-bottom: 25px;
+color: #4da6ff;
+line-height: 1.3;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 15px;
+flex-wrap: wrap;
+position: relative; /* 确保标题在最上层 */
+z-index: 101; /* 确保标题z-index最高 */
+}
+p {
+font-size: 1rem;
+line-height: 1.8;
+color: #e0e0e0;
+margin-bottom: 20px;
+text-align: justify;
+}
+.highlight {
+color: #4da6ff;
+font-weight: bold;
+}
+.card {
+background: rgba(255, 255, 255, 0.08);
+backdrop-filter: blur(12px);
+border-radius: 18px;
+padding: 30px 25px; /* 减小内边距 */
+border: 1px solid rgba(255, 255, 255, 0.15);
+box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4), 0 0 20px rgba(77, 166, 255, 0.1);
+text-align: left;
+position: relative;
+overflow: hidden;
+margin-top: 20px; /* 减小外边距 */
+width: 100%;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+transform: translateY(-5px);
+box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(77, 166, 255, 0.2);
+}
+/* === 公司简介布局 === */
+.company-profile {
+background: linear-gradient(135deg, rgba(77, 166, 255, 0.15), rgba(138, 43, 226, 0.15));
+backdrop-filter: blur(12px);
+border-radius: 18px;
+padding: 35px 30px;
+border: 1px solid rgba(255, 255, 255, 0.2);
+box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4), 0 0 25px rgba(155, 89, 182, 0.3);
+margin-top: 25px;
+width: 100%;
+max-width: 100%; /* 移除最大宽度限制 */
+position: relative;
+overflow: hidden;
+/* 添加内边距，避免文字紧贴边缘 */
+padding: 40px;
+z-index: 100; /* 确保公司简介在导航栏之上 */
+}
+.company-profile::before {
+content: '';
+position: absolute;
+top: -50%;
+left: -50%;
+width: 200%;
+height: 200%;
+background: radial-gradient(circle, rgba(77, 166, 255, 0.1) 0%, transparent 70%);
+z-index: -1;
+}
+.company-profile p {
+font-size: 1.1rem;
+line-height: 1.8;
+margin-bottom: 15px;
+position: relative;
+z-index: 2;
+}
+.company-profile .core-value {
+color: #ff6b6b;
+font-weight: bold;
+}
+.company-profile .business-scenes {
+color: #4da6ff;
+font-weight: bold;
+}
+/* === 目录界面比例问题 === */
+.directory {
+width: 100%;
+max-width: 600px;
+margin: 0 auto;
+padding: 0 5px; /* 减小左右内边距 */
+}
+.directory-item {
+display: flex;
+align-items: center;
+padding: 15px 20px; /* 减小内边距 */
+margin-bottom: 12px; /* 减小外边距 */
+background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(77, 166, 255, 0.08));
+border-radius: 14px; /* 减小圆角 */
+border: 1px solid rgba(255, 255, 255, 0.1);
+cursor: pointer;
+transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+width: 100%;
+position: relative;
+overflow: hidden;
+word-break: break-word;
+box-sizing: border-box;
+min-height: 60px; /* 设置最小高度 */
+}
+.directory-item::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 4px;
+height: 100%;
+background: linear-gradient(0.25turn, #4da6ff, #9b59b6);
+border-radius: 4px 0 0 4px;
+transform: scaleY(0);
+transform-origin: bottom;
+transition: transform 0.3s ease;
+}
+.directory-item:hover::before {
+transform: scaleY(1);
+}
+.directory-item:hover {
+background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(77, 166, 255, 0.15));
+transform: translateX(5px);
+box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+.directory-item .number {
+width: 30px; /* 减小数字大小 */
+height: 30px;
+line-height: 30px;
+font-size: 1rem;
+margin-right: 15px; /* 减小右边距 */
+background: linear-gradient(135deg, #4da6ff, #9b59b6);
+border-radius: 50%;
+color: white;
+font-weight: bold;
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: 0 0 10px rgba(77, 166, 255, 0.5);
+}
+.directory-item .title {
+font-size: 1.1rem; /* 减小字体大小 */
+font-weight: 500; /* 减小字重 */
+color: #e0e0ff;
+flex: 1;
+text-align: left;
+}
+.directory-item .arrow {
+font-size: 1.2rem; /* 减小箭头大小 */
+color: #4da6ff;
+transition: transform 0.3s ease;
+}
+.directory-item:hover .arrow {
+transform: translateX(5px);
+}
+/* === 第六模块标签布局 === */
+.tags-container {
+display: flex;
+flex-wrap: wrap;
+gap: 8px 10px; /* 设置行间距和列间距 */
+justify-content: center;
+margin-top: 25px;
+width: 100%;
+}
+.tag {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+padding: 6px 16px; /* 减小内边距 */
+border-radius: 20px; /* 减小圆角 */
+font-size: 0.85rem; /* 减小字体大小 */
+background: linear-gradient(135deg, rgba(77, 166, 255, 0.2), rgba(138, 43, 226, 0.2));
+border: 1px solid rgba(255, 255, 255, 0.1);
+transition: all 0.3s ease;
+min-width: 90px; /* 设置最小宽度 */
+text-align: center;
+}
+.tag:hover {
+transform: scale(1.05);
+background: linear-gradient(135deg, rgba(77, 166, 255, 0.3), rgba(138, 43, 226, 0.3));
+border-color: rgba(77, 166, 255, 0.5);
+box-shadow: 0 0 15px rgba(77, 166, 255, 0.3);
+}
+.module-number {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+width: 40px;
+height: 40px;
+background: linear-gradient(135deg, #4da6ff, #9b59b6);
+border-radius: 50%;
+font-size: 1.1rem;
+font-weight: bold;
+color: white;
+box-shadow: 0 0 15px rgba(77, 166, 255, 0.4);
+}
+.module-title {
+font-size: 1.6rem;
+font-weight: 700;
+background: linear-gradient(90deg, #4da6ff, #9b59b6, #ff6b6b);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+line-height: 1.2;
+margin: 0;
+position: relative;
+z-index: 101;
+}
+.future-title {
+font-size: 2.8rem !important;
+margin-bottom: 40px !important;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 20px;
+flex-direction: column;
+}
+.future-title .module-number {
+width: 45px;
+height: 45px;
+font-size: 1.2rem;
+}
+.future-card {
+text-align: center;
+border: none;
+background: linear-gradient(135deg, rgba(255, 107, 107, 0.2), rgba(77, 166, 255, 0.2));
+padding: 35px 30px !important;
+margin-top: 25px;
+backdrop-filter: blur(10px);
+border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.vision-text {
+font-size: 1.3rem;
+line-height: 1.7;
+margin-bottom: 20px;
+color: #fff;
+}
+.vision-highlight {
+color: #4da6ff;
+font-weight: bold;
+}
+.vision-conclusion {
+font-size: 1.6rem;
+font-weight: 600;
+background: linear-gradient(90deg, #4da6ff, #9b59b6);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+line-height: 1.5;
+margin-top: 25px;
+}
+.hero-title {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 5px; /* 减小行间距 */
+margin-bottom: 50px; /* 减小底部间距，让整体上移 */
+margin-top: 0px; /* 修复：将负边距改为0，确保标题完整显示 */
+z-index: 300; /* 确保标题在最上层 */
+position: relative;
+}
+.hero-title-line1 {
+font-size: 3.2rem; /* 增大字体 */
+font-weight: 800;
+line-height: 1.1;
+background: linear-gradient(90deg, #ff00ff, #00ffff, #ffff00);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+text-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+position: relative;
+z-index: 301; /* 确保标题在最上层 */
+white-space: nowrap; /* 防止文字换行 */
+}
+.hero-title-line2 {
+font-size: 2.6rem; /* 增大字体 */
+font-weight: 800;
+line-height: 1.1;
+background: linear-gradient(90deg, #ffff00, #ff6b6b, #4da6ff);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+text-shadow: 0 0 20px rgba(255, 255, 0, 0.5);
+position: relative;
+z-index: 301; /* 确保标题在最上层 */
+white-space: nowrap; /* 防止文字换行 */
+}
+@media (max-width: 600px) {
+.ppt-button-small {
+width: 45px;
+height: 45px;
+font-size: 0.8rem;
+bottom: 90px; /* 再上移一点 */
+right: 15px;
+}
+.module-number {
+width: 35px;
+height: 35px;
+font-size: 1rem;
+}
+.module-title {
+font-size: 1.4rem;
+}
+.future-title {
+font-size: 2.2rem !important;
+flex-direction: column;
+gap: 15px;
+}
+.future-title .module-number {
+width: 40px;
+height: 40px;
+font-size: 1.1rem;
+}
+.future-card {
+padding: 30px 25px !important;
+}
+.vision-text {
+font-size: 1.1rem;
+}
+.vision-conclusion {
+font-size: 1.4rem;
+}
+/* 优化小屏目录 */
+.directory {
+width: 100%;
+padding: 0 3px;
+}
+.directory-item {
+padding: 12px 18px;
+font-size: 0.9rem;
+min-height: 50px;
+}
+.directory-item .number {
+width: 28px;
+height: 28px;
+line-height: 28px;
+font-size: 0.95rem;
+}
+.directory-item .title {
+font-size: 1rem;
+}
+/* 优化第六模块标签布局 */
+.tags-container {
+gap: 6px 8px;
+margin-top: 20px;
+}
+.tag {
+padding: 5px 14px;
+font-size: 0.8rem;
+min-width: 85px;
+}
+.company-profile {
+padding: 25px 20px;
+}
+.company-profile p {
+font-size: 1rem;
+margin-bottom: 12px;
+line-height: 1.6;
+}
+.hero-title-line1 {
+font-size: 2.4rem; /* 小屏下适当减小 */
+}
+.hero-title-line2 {
+font-size: 2.0rem; /* 小屏下适当减小 */
+}
+.hero-title {
+margin-top: 0px; /* 修复：小屏下上移量适当减小 */
+margin-bottom: 40px;
+gap: 3px;
+}
+/* 优化公司简介高度 */
+.swiper-slide:nth-child(2) .content-container {
+max-height: calc(100vh - var(--header-height) - 30px);
+padding-bottom: 30px;
+}
+.company-profile {
+max-height: calc(100% - 80px);
+overflow-y: auto;
+}
+}
+/* === 桌面端样式优化 === */
+@media (min-width: 768px) {
+.company-profile {
+max-width: 100%; /* 确保桌面端铺满 */
+padding: 45px; /* 增大内边距 */
+margin-top: 30px;
+}
+.swiper-slide:nth-child(2) .content-container {
+max-width: 90%;
+margin: 0 auto;
+}
+/* 修复文字被遮挡问题 */
+.company-profile {
+z-index: 100;
+}
+.company-profile p {
+font-size: 1.2rem;
+line-height: 1.9;
+}
+}
+@media (min-width: 1024px) {
+.company-profile {
+max-width: 80%;
+padding: 50px;
+}
+.swiper-slide:nth-child(2) .content-container {
+max-width: 80%;
+}
+}
+</style>
 </head>
 <body>
-
-    <div id="loading-screen">
-        <img src="logo.png" alt="NS智科 Logo" class="loader-logo">
-        <div class="loader-text">LOADING...</div>
-    </div>
-
-    <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-
-            <!-- === 首页（封面） === -->
-            <div class="swiper-slide">
-                <div class="bg-decor bg-decor-1"></div>
-                <div class="decoration decor-1-1 bubble"></div>
-                <div class="decoration decor-1-2"></div>
-                <div class="decoration decor-1-3"><div class="bubble"></div></div>
-                <div class="content-container">
-                    <div class="hero-title fade-in-text delay-1" style="font-size: 3rem; font-weight: 800; margin-bottom: 30px; line-height: 1.1; background: linear-gradient(90deg, #4da6ff, #9b59b6, #ff6b6b); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">上海牛苏科技有限公司</div>
-                    <img src="logo.png" alt="NS智科 Logo" style="width: 170px; border-radius: 20px; margin-bottom: 35px; border: 2px solid #4da6ff; box-shadow: 0 0 40px rgba(77, 166, 255, 0.4);">
-                    <div class="hero-subtitle fade-in-text delay-2" style="font-size: 1.4rem; opacity: 0.95; margin-bottom: 45px; font-weight: 300; color: #e0e0ff;">以AI与物联网技术，赋能工业智能化转型</div>
-                    <div class="fade-in-text delay-3" style="font-size: 1.1rem; opacity: 0.7; margin-top: 35px; font-weight: 300; letter-spacing: 1px;">向上滑动，探索未来</div>
-                </div>
-            </div>
-
-            <!-- === 目录页面 === -->
-            <div class="swiper-slide">
-                <div class="bg-decor bg-decor-2"></div>
-                <div class="content-container">
-                    <h2 class="fade-in-text delay-1" style="margin-bottom: 40px; color: #9b59b6; font-size: 1.9rem; background: linear-gradient(90deg, #9b59b6, #ff6b6b); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">目录</h2>
-                    <div class="directory fade-in-text delay-2">
-                        <div class="directory-item" data-slide="2"><div class="number">01</div><div class="title">动设备智慧监测系统</div><div class="arrow">→</div></div>
-                        <div class="directory-item" data-slide="3"><div class="number">02</div><div class="title">安全风险监测预警系统</div><div class="arrow">→</div></div>
-                        <div class="directory-item" data-slide="4"><div class="number">03</div><div class="title">配电房智慧监测系统</div><div class="arrow">→</div></div>
-                        <div class="directory-item" data-slide="5"><div class="number">04</div><div class="title">消防泵房智慧监测</div><div class="arrow">→</div></div>
-                        <div class="directory-item" data-slide="6"><div class="number">05</div><div class="title">智慧能源管理</div><div class="arrow">→</div></div>
-                        <div class="directory-item" data-slide="7"><div class="number">06</div><div class="title">水监测带设备运维服务</div><div class="arrow">→</div></div>
-                        <div class="directory-item" data-slide="8"><div class="number">07</div><div class="title">展望未来</div><div class="arrow">→</div></div>
-                    </div>
-                </div>
-                <!-- 右侧导航按钮 -->
-                <div class="nav-buttons">
-                    <div class="nav-button active">01</div>
-                    <div class="nav-button">02</div>
-                    <div class="nav-button">03</div>
-                    <div class="nav-button">04</div>
-                    <div class="nav-button">05</div>
-                    <div class="nav-button">06</div>
-                </div>
-            </div>
-
-            <!-- === 模块一：动设备智慧监测系统 === -->
-            <div class="swiper-slide">
-                <div class="bg-decor bg-decor-3"></div>
-                <div class="content-container">
-                    <h2 class="fade-in-text delay-1">
-                        <span class="module-number">01</span>
-                        <span class="module-title">动设备智慧监测系统</span>
-                    </h2>
-                    <div class="card fade-in-text delay-2">
-                        <p>专为电机、减速机、齿轮箱、泵体等<strong>关键旋转设备</strong>量身研发。以高精度振动传感、多点位温度采集为核心，深度融合<strong>边缘计算与自研AI诊断算法</strong>。</p>
-                        <p>实现全天候预防性在线监测，精准识别不平衡、轴承磨损、齿轮断齿等各类典型故障，大幅减少非计划停机，延长设备服役周期。</p>
-                    </div>
-                    <div class="tags-container fade-in-text delay-3">
-                        <div class="tag">故障预判</div><div class="tag">精准定位</div><div class="tag">智能运维</div><div class="tag">边缘计算</div><div class="tag">AI诊断</div>
-                    </div>
-                </div>
-                <!-- 右侧导航按钮 -->
-                <div class="nav-buttons">
-                    <div class="nav-button active">01</div>
-                    <div class="nav-button">02</div>
-                    <div class="nav-button">03</div>
-                    <div class="nav-button">04</div>
-                    <div class="nav-button">05</div>
-                    <div class="nav-button">06</div>
-                </div>
-                <div class="ppt-button-small" data-pdf="ppt/demusi.pdf">PPT</div>
-            </div>
-
-            <!-- === 模块二：安全风险监测预警系统 === -->
-            <div class="swiper-slide">
-                <div class="bg-decor bg-decor-4"></div>
-                <div class="content-container">
-                    <h2 class="fade-in-text delay-1">
-                        <span class="module-number">02</span>
-                        <span class="module-title">安全风险监测预警系统</span>
-                    </h2>
-                    <p class="fade-in-text delay-2">专为压力容器、管道、锅炉等<strong>特种设备</strong>研发。整合光纤传感、红外热成像等多元感知技术，攻克高温、高压、易燃易爆等严苛工况下的监测难题。</p>
-                    <div class="card fade-in-text delay-3" style="text-align: center; background: rgba(255, 99, 71, 0.15); border-color: rgba(255, 99, 71, 0.4);">
-                        <h3 style="color: #ff6b6b; margin-bottom: 18px; font-size: 1.5rem;">防范重特大安全事故</h3>
-                        <p style="font-size: 1.05rem; margin-bottom: 0; line-height: 1.8; color: #ffebee;">精准捕捉内壁腐蚀、应力异常、介质泄漏等隐患，筑牢静设备本质安全防线。</p>
-                    </div>
-                    <div class="tags-container fade-in-text delay-4">
-                        <div class="tag">隐患定位</div><div class="tag">风险分级</div><div class="tag">合规台账</div><div class="tag">光纤传感</div><div class="tag">红外热成像</div>
-                    </div>
-                </div>
-                <!-- 右侧导航按钮 -->
-                <div class="nav-buttons">
-                    <div class="nav-button">01</div>
-                    <div class="nav-button active">02</div>
-                    <div class="nav-button">03</div>
-                    <div class="nav-button">04</div>
-                    <div class="nav-button">05</div>
-                    <div class="nav-button">06</div>
-                </div>
-                <div class="ppt-button-small" data-pdf="ppt/jingshebei.pdf">PPT</div>
-            </div>
-
-            <!-- === 模块三：配电房智慧监测系统 === -->
-            <div class="swiper-slide">
-                <div class="bg-decor bg-decor-5"></div>
-                <div class="content-container">
-                    <h2 class="fade-in-text delay-1">
-                        <span class="module-number">03</span>
-                        <span class="module-title">配电房智慧监测系统</span>
-                    </h2>
-                    <p class="fade-in-text delay-2">采用<strong>模块化、即插即用</strong>设计，完美适配不同规模配电房。以多维度用电状态感知与环境安防监测为核心，实现配电房全生命周期预防性在线监测。</p>
-                    <div class="card fade-in-text delay-3">
-                        <p style="margin-bottom: 18px;"><span class="highlight">安全保障：</span>全方位监测用电隐患，减少电气火灾。</p>
-                        <p style="margin-bottom: 18px;"><span class="highlight">智能运维：</span>削减人工巡检成本，实现无人化。</p>
-                        <p style="margin-bottom: 0;"><span class="highlight">数据驱动：</span>依托数据分析模型，提前精准预警。</p>
-                    </div>
-                    <div class="tags-container fade-in-text delay-4">
-                        <div class="tag">线路过载</div><div class="tag">局部放电</div><div class="tag">环境安防</div><div class="tag">远程联动</div>
-                    </div>
-                </div>
-                <!-- 右侧导航按钮 -->
-                <div class="nav-buttons">
-                    <div class="nav-button">01</div>
-                    <div class="nav-button">02</div>
-                    <div class="nav-button active">03</div>
-                    <div class="nav-button">04</div>
-                    <div class="nav-button">05</div>
-                    <div class="nav-button">06</div>
-                </div>
-                <div class="ppt-button-small" data-pdf="ppt/peidian.pdf">PPT</div>
-            </div>
-
-            <!-- === 模块四：消防泵房智慧监测 === -->
-            <div class="swiper-slide">
-                <div class="bg-decor bg-decor-6"></div>
-                <div class="content-container">
-                    <h2 class="fade-in-text delay-1">
-                        <span class="module-number">04</span>
-                        <span class="module-title">消防泵房智慧监测</span>
-                    </h2>
-                    <p class="fade-in-text delay-2">聚焦消防设施<strong>完整性与待命状态</strong>管控，破解"带病运行、监管缺位"痛点。实现全天候预防性在线监测，保障消防系统时刻处于合规备战状态。</p>
-                    <div class="card fade-in-text delay-3">
-                        <p style="margin-bottom: 0; line-height: 1.8;"><strong>监测范围：</strong>水泵启停、管网压力、液位波动、阀门状态、电机温度等核心隐患，最大限度降低设施失效风险。</p>
-                    </div>
-                    <div class="tags-container fade-in-text delay-4">
-                        <div class="tag">水泵启停</div><div class="tag">管网压力</div><div class="tag">液位波动</div><div class="tag">阀门状态</div><div class="tag">电机温度</div>
-                    </div>
-                </div>
-                <!-- 右侧导航按钮 -->
-                <div class="nav-buttons">
-                    <div class="nav-button">01</div>
-                    <div class="nav-button">02</div>
-                    <div class="nav-button">03</div>
-                    <div class="nav-button active">04</div>
-                    <div class="nav-button">05</div>
-                    <div class="nav-button">06</div>
-                </div>
-                <div class="ppt-button-small" data-pdf="ppt/xiaofang.pdf">PPT</div>
-            </div>
-
-            <!-- === 模块五：智慧能源管理 === -->
-            <div class="swiper-slide">
-                <div class="bg-decor bg-decor-7"></div>
-                <div class="content-container">
-                    <h2 class="fade-in-text delay-1">
-                        <span class="module-number">05</span>
-                        <span class="module-title">智慧能源管理</span>
-                    </h2>
-                    <p class="fade-in-text delay-2">构建覆盖<strong>"产—输—用"全链条</strong>的智慧能源管理体系。聚焦空压、冷却水、余热回收等场景，实现能效诊断与动态优化调度。</p>
-                    <div class="card fade-in-text delay-3">
-                        <p style="margin-bottom: 18px;"><span class="highlight">柔性用能：</span>实现能源需求的智能匹配与调度。</p>
-                        <p style="margin-bottom: 18px;"><span class="highlight">多能耦合：</span>整合多种能源形式，提升整体效率。</p>
-                        <p style="margin-bottom: 0;"><span class="highlight">节能优化：</span>构建闭环管理，持续降低能耗成本。</p>
-                    </div>
-                    <div class="tags-container fade-in-text delay-4">
-                        <div class="tag">空压系统</div><div class="tag">冷却水</div><div class="tag">余热回收</div><div class="tag">能效诊断</div><div class="tag">动态优化</div>
-                    </div>
-                </div>
-                <!-- 右侧导航按钮 -->
-                <div class="nav-buttons">
-                    <div class="nav-button">01</div>
-                    <div class="nav-button">02</div>
-                    <div class="nav-button">03</div>
-                    <div class="nav-button">04</div>
-                    <div class="nav-button active">05</div>
-                    <div class="nav-button">06</div>
-                </div>
-                <div class="ppt-button-small" data-pdf="ppt/jieneng.pdf">PPT</div>
-            </div>
-
-            <!-- === 模块六：水监测带设备运维服务 === -->
-            <div class="swiper-slide">
-                <div class="bg-decor bg-decor-9"></div>
-                <div class="content-container">
-                    <h2 class="fade-in-text delay-1">
-                        <span class="module-number">06</span>
-                        <span class="module-title">水监测带设备运维服务</span>
-                    </h2>
-                    <p class="fade-in-text delay-2 water-monitoring-intro">
-                        专注水质在线分析仪器的研发、生产与解决方案。提供涵盖氨氮、COD、总磷、总氮、重金属等核心参数的在线监测设备，结合远程运维管理与数据采集系统。
-                    </p>
-                    <div class="card fade-in-text delay-3 water-monitoring-card">
-                        <p style="margin-bottom: 12px; line-height: 1.6;"><span class="highlight">核心技术：</span>顺序注射技术、八联阀组件、光源自动PID调节。</p>
-                        <p style="margin-bottom: 12px; line-height: 1.6;"><span class="highlight">产品优势：</span>模块化设计、微量试剂、智能预处理。</p>
-                        <p style="margin-bottom: 0; line-height: 1.6;"><span class="highlight">运维保障：</span>10年寿命、1小时响应、以换代修、终身软件升级。</p>
-                    </div>
-                    <!-- 修复：第六模块标签布局 - 两行显示 -->
-                    <div class="tags-container fade-in-text delay-4" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px 10px; margin-top: 25px;">
-                        <div class="tag">水质监测</div>
-                        <div class="tag">在线分析</div>
-                        <div class="tag">远程运维</div>
-                        <div class="tag">智能诊断</div>
-                        <div class="tag">无人值守</div>
-                    </div>
-                </div>
-                <!-- 右侧导航按钮 -->
-                <div class="nav-buttons">
-                    <div class="nav-button">01</div>
-                    <div class="nav-button">02</div>
-                    <div class="nav-button">03</div>
-                    <div class="nav-button">04</div>
-                    <div class="nav-button">05</div>
-                    <div class="nav-button active">06</div>
-                </div>
-                <div class="ppt-button-small" data-pdf="ppt/shuiyunwei.pdf">PPT</div>
-            </div>
-
-            <!-- === 模块七：展望未来 === -->
-            <div class="swiper-slide">
-                <div class="bg-decor bg-decor-8"></div>
-                <div class="content-container">
-                    <h1 class="future-title fade-in-text delay-1">
-                        <span class="module-number">07</span>
-                        <span class="module-title">展望未来</span>
-                    </h1>
-                    <div class="card future-card fade-in-text delay-2">
-                        <p class="vision-text">
-                            上海牛苏科技致力于助力企业从<strong>"传统制造"迈向"智能智造"</strong>。
-                        </p>
-                        <p class="vision-text">
-                            我们追求实现 <span class="vision-highlight">安全、效益、绿色、智能</span> 的协同发展。
-                        </p>
-                        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.3); margin: 30px 0;">
-                        <p class="vision-conclusion">
-                            携手牛苏科技<br>共创智慧工厂新未来
-                        </p>
-                    </div>
-                </div>
-                <!-- 右侧导航按钮 -->
-                <div class="nav-buttons">
-                    <div class="nav-button">01</div>
-                    <div class="nav-button">02</div>
-                    <div class="nav-button">03</div>
-                    <div class="nav-button">04</div>
-                    <div class="nav-button">05</div>
-                    <div class="nav-button">06</div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-        // 动态计算标题栏高度
-        (function() {
-            const ua = navigator.userAgent;
-            let headerHeight = 0;
-            
-            // 企业微信检测
-            if (ua.includes('MicroMessenger') && (ua.includes('wxwork') || ua.includes('WorkWeChat'))) {
-                headerHeight = 44;
-            }
-            // 钉钉检测
-            else if (ua.includes('DingTalk')) {
-                headerHeight = 50;
-            }
-            // QQ浏览器检测
-            else if (ua.includes('MQQBrowser')) {
-                headerHeight = 44;
-            }
-            // Safari/Chrome 检测
-            else if (ua.includes('Safari') || ua.includes('Chrome')) {
-                if (window.screen.height >= 812 || window.screen.width >= 812) {
-                    headerHeight = 44;
-                } else {
-                    headerHeight = 44;
-                }
-            }
-            // 默认计算
-            else {
-                const diff = window.innerHeight - document.documentElement.clientHeight;
-                if (diff > 30 && diff < 70) {
-                    headerHeight = diff;
-                } else {
-                    headerHeight = 44;
-                }
-            }
-            
-            document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
-        })();
-        
-        let swiperInstance = null;
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const loadingScreen = document.getElementById('loading-screen');
-            setTimeout(() => {
-                loadingScreen.style.opacity = '0';
-                setTimeout(() => { 
-                    loadingScreen.style.display = 'none'; 
-                    // 强制触发滚动以隐藏导航栏
-                    setTimeout(() => {
-                        window.scrollTo(0, 1);
-                        setTimeout(() => {
-                            window.scrollTo(0, 0);
-                        }, 300);
-                    }, 500);
-                }, 800);
-            }, 1000);
-        });
-
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(() => {
-                initSwiper();
-            }, 1100);
-        });
-
-        function initSwiper() {
-            swiperInstance = new Swiper(".mySwiper", {
-                direction: "vertical",
-                slidesPerView: 1,
-                spaceBetween: 0,
-                mousewheel: true,
-                speed: 800,
-                effect: 'slide',
-                parallax: true,
-                touchRatio: 1.5,
-                touchAngle: 45,
-                resistanceRatio: 0,
-                preloadImages: false,
-                updateOnImagesReady: true,
-                observer: true,
-                observeParents: true,
-                observeSlideChildren: true,
-                allowTouchMove: true,
-                noSwiping: false,
-                noSwipingClass: 'no-swipe',
-                on: {
-                    init: function() {
-                        setTimeout(() => {
-                            this.update();
-                            this.updateSlidesClasses();
-                            this.updateProgress();
-                        }, 300);
-                    },
-                    slideChange: function() {
-                        setTimeout(() => {
-                            window.scrollTo(0, 0);
-                        }, 100);
-                    }
-                }
-            });
-
-            // 目录点击跳转
-            const directoryItems = document.querySelectorAll('.directory-item');
-            directoryItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    const targetSlide = parseInt(this.getAttribute('data-slide'));
-                    if (swiperInstance && !swiperInstance.animating) {
-                        swiperInstance.slideTo(targetSlide);
-                    }
-                });
-            });
-            
-            // 导航按钮点击跳转
-            const navButtons = document.querySelectorAll('.nav-button');
-            navButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const slideIndex = parseInt(this.textContent);
-                    if (swiperInstance && !swiperInstance.animating) {
-                        swiperInstance.slideTo(slideIndex);
-                    }
-                });
-            });
-        }
-
-        // 修复：PPT按钮点击跳转 - 完整实现
-        document.addEventListener('click', function(e) {
-            const pptButton = e.target.closest('.ppt-button-small');
-            if (pptButton) {
-                e.preventDefault();
-                const pdfUrl = pptButton.getAttribute('data-pdf');
-                
-                // 显示确认弹窗
-                if (pdfUrl && confirm(`您即将查看【${getSystemNameFromUrl(pdfUrl)}】的详细PPT文件。\n\n文件将在新窗口中打开，建议在WiFi环境下查看。\n\n是否继续？`)) {
-                    // 用户点击确定后，延迟打开PDF以确保弹窗关闭
-                    setTimeout(() => {
-                        window.open(pdfUrl, '_blank');
-                    }, 100);
-                }
-            }
-        });
-
-        // 辅助函数：从URL中提取系统名称
-        function getSystemNameFromUrl(url) {
-            const filename = url.split('/').pop().replace('.pdf', '');
-            return filename.replace(/_/g, ' ').replace(/%20/g, ' ');
-        }
-
-        // 点击空白处返回目录
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(() => {
-                const slides = document.querySelectorAll('.swiper-slide');
-                slides.forEach((slide, index) => {
-                    if (index > 1) {
-                        slide.addEventListener('click', function(e) {
-                            if (!e.target.closest('.card, .tag, .ppt-button-small, .nav-button, button, a, input')) {
-                                if (swiperInstance && !swiperInstance.animating) {
-                                    swiperInstance.slideTo(1);
-                                }
-                            }
-                        });
-                    }
-                });
-            }, 1200);
-        });
-        
-        // 处理图片加载失败 - 确保logo显示
-        document.addEventListener('DOMContentLoaded', function() {
-            const logos = document.querySelectorAll('img[src="logo.png"]');
-            logos.forEach(logo => {
-                logo.onerror = function() {
-                    console.log('Logo加载失败，使用备用方案');
-                    this.style.backgroundColor = '#1a2a4a';
-                    this.style.display = 'flex';
-                    this.style.alignItems = 'center';
-                    this.style.justifyContent = 'center';
-                    this.style.color = '#4da6ff';
-                    this.style.fontWeight = 'bold';
-                    this.style.fontSize = '2.5rem';
-                    this.innerHTML = 'NS';
-                    this.onerror = null; // 防止无限循环
-                };
-            });
-        });
-    </script>
+<div id="loading-screen">
+<img src="logo.png" alt="NS智科 Logo" class="loader-logo">
+<div class="loader-text">LOADING...</div>
+</div>
+<div class="swiper mySwiper">
+<div class="swiper-wrapper">
+<!-- === 首页（封面） === -->
+<div class="swiper-slide">
+<div class="bg-decor bg-decor-1"></div>
+<div class="decoration decor-1-1 bubble" style="z-index: 1;"></div>
+<div class="decoration decor-1-2" style="z-index: 1;"></div>
+<div class="decoration decor-1-3" style="z-index: 1;"><div class="bubble"></div></div>
+<div class="content-container">
+<div class="hero-title fade-in-text delay-1" style="position: relative; z-index: 300; margin-top: 0px;">
+<div class="hero-title-line1" style="position: relative; z-index: 301;">上海牛苏科技</div>
+<div class="hero-title-line2" style="position: relative; z-index: 301;">有限公司</div>
+</div>
+<img src="logo.png" alt="NS智科 Logo" style="width: 170px; border-radius: 20px; margin-bottom: 35px; border: 2px solid #4da6ff; box-shadow: 0 0 40px rgba(77, 166, 255, 0.4); position: relative; z-index: 250;">
+<div class="hero-subtitle fade-in-text delay-2" style="font-size: 1.4rem; opacity: 0.95; margin-bottom: 45px; font-weight: 300; color: #e0e0ff; position: relative; z-index: 250;">以AI与物联网技术，赋能工业智能化转型</div>
+<div class="fade-in-text delay-3" style="font-size: 1.1rem; opacity: 0.7; margin-top: 35px; font-weight: 300; letter-spacing: 1px; position: relative; z-index: 250;">向上滑动，探索未来</div>
+</div>
+</div>
+<!-- === 公司介绍页面 === -->
+<div class="swiper-slide">
+<div class="bg-decor bg-decor-10"></div>
+<div class="content-container">
+<h2 class="fade-in-text delay-1" style="margin-bottom: 30px; color: #9b59b6; font-size: 1.8rem; background: linear-gradient(90deg, #9b59b6, #4da6ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">公司简介</h2>
+<div class="company-profile fade-in-text delay-2">
+<p>上海牛苏科技有限公司聚焦<strong class="business-scenes">动设备、静设备、配电房用电安全、消防泵房设施完整性、智慧能源管理及水监测带设备运维服务</strong>六大核心业务场景。</p>
+<p>坚守<strong class="core-value">"让设备更安全、让运行更可靠、让生产更高效"</strong>的核心价值，为客户提供全栈式解决方案。</p>
+<p>凭借精准感知与智能预警技术，覆盖矿山、钢铁、化工、电力等多元场景，助力企业降本增效、筑牢安全防线。</p>
+<p>以创新驱动发展，持续打造工业智能物联平台，赋能产业智能化升级。</p>
+</div>
+</div>
+</div>
+<!-- === 目录页面 === -->
+<div class="swiper-slide">
+<div class="bg-decor bg-decor-2"></div>
+<div class="content-container">
+<h2 class="fade-in-text delay-1" style="margin-bottom: 40px; color: #9b59b6; font-size: 1.9rem; background: linear-gradient(90deg, #9b59b6, #ff6b6b); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">目录</h2>
+<div class="directory fade-in-text delay-2">
+<div class="directory-item" data-slide="3"><div class="number">01</div><div class="title">动设备智慧监测系统</div><div class="arrow">→</div></div>
+<div class="directory-item" data-slide="4"><div class="number">02</div><div class="title">安全风险监测预警系统</div><div class="arrow">→</div></div>
+<div class="directory-item" data-slide="5"><div class="number">03</div><div class="title">配电房智慧监测系统</div><div class="arrow">→</div></div>
+<div class="directory-item" data-slide="6"><div class="number">04</div><div class="title">消防泵房智慧监测</div><div class="arrow">→</div></div>
+<div class="directory-item" data-slide="7"><div class="number">05</div><div class="title">智慧能源管理</div><div class="arrow">→</div></div>
+<div class="directory-item" data-slide="8"><div class="number">06</div><div class="title">水监测带设备运维服务</div><div class="arrow">→</div></div>
+<div class="directory-item" data-slide="9"><div class="number">07</div><div class="title">展望未来</div><div class="arrow">→</div></div>
+</div>
+</div>
+</div>
+<!-- === 模块一：动设备智慧监测系统 === -->
+<div class="swiper-slide">
+<div class="bg-decor bg-decor-3"></div>
+<div class="content-container">
+<h2 class="fade-in-text delay-1">
+<span class="module-number">01</span>
+<span class="module-title">动设备智慧监测系统</span>
+</h2>
+<div class="card fade-in-text delay-2">
+<p>专为电机、减速机、齿轮箱、泵体等<strong>关键旋转设备</strong>量身研发。以高精度振动传感、多点位温度采集为核心，深度融合<strong>边缘计算与自研AI诊断算法</strong>。</p>
+<p>实现全天候预防性在线监测，精准识别不平衡、轴承磨损、齿轮断齿等各类典型故障，大幅减少非计划停机，延长设备服役周期。</p>
+</div>
+<div class="tags-container fade-in-text delay-3">
+<div class="tag">故障预判</div><div class="tag">精准定位</div><div class="tag">智能运维</div><div class="tag">边缘计算</div><div class="tag">AI诊断</div>
+</div>
+</div>
+<div class="ppt-button-small" data-pdf="ppt/demusi.pdf">PPT</div>
+</div>
+<!-- === 模块二：安全风险监测预警系统 === -->
+<div class="swiper-slide">
+<div class="bg-decor bg-decor-4"></div>
+<div class="content-container">
+<h2 class="fade-in-text delay-1">
+<span class="module-number">02</span>
+<span class="module-title">安全风险监测预警系统</span>
+</h2>
+<p class="fade-in-text delay-2">专为压力容器、管道、锅炉等<strong>特种设备</strong>研发。整合光纤传感、红外热成像等多元感知技术，攻克高温、高压、易燃易爆等严苛工况下的监测难题。</p>
+<div class="card fade-in-text delay-3" style="text-align: center; background: linear-gradient(135deg, rgba(255, 99, 71, 0.2), rgba(255, 150, 100, 0.1)); border: 1px solid rgba(255, 99, 71, 0.4);">
+<h3 style="color: #ff6b6b; margin-bottom: 18px; font-size: 1.5rem;">防范重特大安全事故</h3>
+<p style="font-size: 1.05rem; margin-bottom: 0; line-height: 1.8; color: #ffebee;">精准捕捉内壁腐蚀、应力异常、介质泄漏等隐患，筑牢静设备本质安全防线。</p>
+</div>
+<div class="tags-container fade-in-text delay-4">
+<div class="tag">隐患定位</div><div class="tag">风险分级</div><div class="tag">合规台账</div><div class="tag">光纤传感</div><div class="tag">红外热成像</div>
+</div>
+</div>
+<div class="ppt-button-small" data-pdf="ppt/jingshebei.pdf">PPT</div>
+</div>
+<!-- === 模块三：配电房智慧监测系统 === -->
+<div class="swiper-slide">
+<div class="bg-decor bg-decor-5"></div>
+<div class="content-container">
+<h2 class="fade-in-text delay-1">
+<span class="module-number">03</span>
+<span class="module-title">配电房智慧监测系统</span>
+</h2>
+<p class="fade-in-text delay-2">采用<strong>模块化、即插即用</strong>设计，完美适配不同规模配电房。以多维度用电状态感知与环境安防监测为核心，实现配电房全生命周期预防性在线监测。</p>
+<div class="card fade-in-text delay-3" style="background: linear-gradient(135deg, rgba(77, 200, 255, 0.15), rgba(100, 150, 255, 0.1));">
+<p style="margin-bottom: 18px;"><span class="highlight">安全保障：</span>全方位监测用电隐患，减少电气火灾。</p>
+<p style="margin-bottom: 18px;"><span class="highlight">智能运维：</span>削减人工巡检成本，逐步实现无人化巡检。</p>
+<p style="margin-bottom: 0;"><span class="highlight">数据驱动：</span>依托数据分析模型，提前精准预警。</p>
+</div>
+<div class="tags-container fade-in-text delay-4">
+<div class="tag">线路过载</div><div class="tag">局部放电</div><div class="tag">环境安防</div><div class="tag">远程联动</div>
+</div>
+</div>
+<div class="ppt-button-small" data-pdf="ppt/peidian.pdf">PPT</div>
+</div>
+<!-- === 模块四：消防泵房智慧监测 === -->
+<div class="swiper-slide">
+<div class="bg-decor bg-decor-6"></div>
+<div class="content-container">
+<h2 class="fade-in-text delay-1">
+<span class="module-number">04</span>
+<span class="module-title">消防泵房智慧监测</span>
+</h2>
+<p class="fade-in-text delay-2">聚焦消防设施<strong>完整性与待命状态</strong>管控，破解"带病运行、监管缺位"痛点。实现全天候预防性在线监测，保障消防系统时刻处于合规备战状态。</p>
+<div class="card fade-in-text delay-3" style="background: linear-gradient(135deg, rgba(255, 100, 100, 0.15), rgba(255, 150, 100, 0.1));">
+<p style="margin-bottom: 0; line-height: 1.8;"><strong>监测范围：</strong>水泵启停、管网压力、液位波动、阀门状态、电机温度等核心隐患，最大限度降低设施失效风险。</p>
+</div>
+<div class="tags-container fade-in-text delay-4">
+<div class="tag">水泵启停</div><div class="tag">管网压力</div><div class="tag">液位波动</div><div class="tag">阀门状态</div><div class="tag">电机温度</div>
+</div>
+</div>
+<div class="ppt-button-small" data-pdf="ppt/xiaofang.pdf">PPT</div>
+</div>
+<!-- === 模块五：智慧能源管理 === -->
+<div class="swiper-slide">
+<div class="bg-decor bg-decor-7"></div>
+<div class="content-container">
+<h2 class="fade-in-text delay-1">
+<span class="module-number">05</span>
+<span class="module-title">智慧能源管理</span>
+</h2>
+<p class="fade-in-text delay-2">构建覆盖<strong>"产—输—用"全链条</strong>的智慧能源管理体系。聚焦空压、冷却水、余热回收等场景，实现能效诊断与动态优化调度。</p>
+<div class="card fade-in-text delay-3" style="background: linear-gradient(135deg, rgba(100, 255, 150, 0.15), rgba(50, 200, 100, 0.1));">
+<p style="margin-bottom: 18px;"><span class="highlight">柔性用能：</span>实现能源需求的智能匹配与调度。</p>
+<p style="margin-bottom: 18px;"><span class="highlight">多能耦合：</span>整合多种能源形式，提升整体效率。</p>
+<p style="margin-bottom: 0;"><span class="highlight">节能优化：</span>构建闭环管理，持续降低能耗成本。</p>
+</div>
+<div class="tags-container fade-in-text delay-4">
+<div class="tag">空压系统</div><div class="tag">冷却水</div><div class="tag">余热回收</div><div class="tag">能效诊断</div><div class="tag">动态优化</div>
+</div>
+</div>
+<div class="ppt-button-small" data-pdf="ppt/jieneng.pdf">PPT</div>
+</div>
+<!-- === 模块六：水监测带设备运维服务 === -->
+<div class="swiper-slide">
+<div class="bg-decor bg-decor-9"></div>
+<div class="content-container">
+<h2 class="fade-in-text delay-1">
+<span class="module-number">06</span>
+<span class="module-title">水监测带设备运维服务</span>
+</h2>
+<p class="fade-in-text delay-2 water-monitoring-intro">
+专注水质在线分析仪器的研发、生产与解决方案。提供涵盖氨氮、COD、总磷、总氮、重金属等核心参数的在线监测设备，结合远程运维管理与数据采集系统。
+</p>
+<div class="card fade-in-text delay-3 water-monitoring-card" style="background: linear-gradient(135deg, rgba(100, 180, 255, 0.15), rgba(50, 130, 200, 0.1));">
+<p style="margin-bottom: 12px; line-height: 1.6;"><span class="highlight">核心技术：</span>顺序注射技术、八联阀组件、光源自动PID调节。</p>
+<p style="margin-bottom: 12px; line-height: 1.6;"><span class="highlight">产品优势：</span>模块化设计、微量试剂、智能预处理。</p>
+<p style="margin-bottom: 0; line-height: 1.6;"><span class="highlight">运维保障：</span>10年寿命、1小时响应、以换代修、终身软件升级。</p>
+</div>
+<!-- 修复：第六模块标签布局 - 两行显示 -->
+<div class="tags-container fade-in-text delay-4" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px 10px; margin-top: 25px;">
+<div class="tag">水质监测</div>
+<div class="tag">在线分析</div>
+<div class="tag">远程运维</div>
+<div class="tag">智能诊断</div>
+<div class="tag">无人值守</div>
+</div>
+</div>
+<div class="ppt-button-small" data-pdf="ppt/shuiyunwei.pdf">PPT</div>
+</div>
+<!-- === 模块七：展望未来 === -->
+<div class="swiper-slide">
+<div class="bg-decor bg-decor-8"></div>
+<div class="content-container">
+<h1 class="future-title fade-in-text delay-1">
+<span class="module-number">07</span>
+<span class="module-title">展望未来</span>
+</h1>
+<div class="card future-card fade-in-text delay-2">
+<p class="vision-text">
+上海牛苏科技致力于助力企业从<strong>"传统制造"迈向"智能智造"</strong>。
+</p>
+<p class="vision-text">
+我们追求实现 <span class="vision-highlight">安全、效益、绿色、智能</span> 的协同发展。
+</p>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.3); margin: 30px 0;">
+<p class="vision-conclusion">
+携手牛苏科技<br>共创智慧工厂新未来
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+// 动态计算标题栏高度
+(function() {
+const ua = navigator.userAgent;
+let headerHeight = 0;
+// 企业微信检测
+if (ua.includes('MicroMessenger') && (ua.includes('wxwork') || ua.includes('WorkWeChat'))) {
+headerHeight = 44;
+}
+// 钉钉检测
+else if (ua.includes('DingTalk')) {
+headerHeight = 50;
+}
+// QQ浏览器检测
+else if (ua.includes('MQQBrowser')) {
+headerHeight = 44;
+}
+// Safari/Chrome 检测
+else if (ua.includes('Safari') || ua.includes('Chrome')) {
+if (window.screen.height >= 812 || window.screen.width >= 812) {
+headerHeight = 44;
+} else {
+headerHeight = 44;
+}
+}
+// 默认计算
+else {
+const diff = window.innerHeight - document.documentElement.clientHeight;
+if (diff > 30 && diff < 70) {
+headerHeight = diff;
+} else {
+headerHeight = 44;
+}
+}
+document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
+})();
+let swiperInstance = null;
+document.addEventListener('DOMContentLoaded', function() {
+const loadingScreen = document.getElementById('loading-screen');
+setTimeout(() => {
+loadingScreen.style.opacity = '0';
+setTimeout(() => {
+loadingScreen.style.display = 'none';
+// 强制触发滚动以隐藏导航栏
+setTimeout(() => {
+window.scrollTo(0, 1);
+setTimeout(() => {
+window.scrollTo(0, 0);
+}, 300);
+}, 500);
+}, 800);
+}, 1000);
+});
+document.addEventListener('DOMContentLoaded', function() {
+setTimeout(() => {
+initSwiper();
+// 初始化PPT按钮事件
+initPptButtons();
+}, 1100);
+});
+function initSwiper() {
+swiperInstance = new Swiper(".mySwiper", {
+direction: "vertical",
+slidesPerView: 1,
+spaceBetween: 0,
+mousewheel: true,
+speed: 800,
+effect: 'slide',
+parallax: true,
+touchRatio: 1.5,
+touchAngle: 45,
+resistanceRatio: 0,
+preloadImages: false,
+updateOnImagesReady: true,
+observer: true,
+observeParents: true,
+observeSlideChildren: true,
+allowTouchMove: true,
+noSwiping: false,
+noSwipingClass: 'no-swipe',
+on: {
+init: function() {
+setTimeout(() => {
+this.update();
+this.updateSlidesClasses();
+this.updateProgress();
+}, 300);
+},
+slideChange: function() {
+setTimeout(() => {
+window.scrollTo(0, 0);
+}, 100);
+}
+}
+});
+}
+// 目录点击跳转
+document.addEventListener('DOMContentLoaded', function() {
+setTimeout(() => {
+const directoryItems = document.querySelectorAll('.directory-item');
+directoryItems.forEach(item => {
+item.addEventListener('click', function() {
+const targetSlide = parseInt(this.getAttribute('data-slide'));
+if (swiperInstance && !swiperInstance.animating) {
+swiperInstance.slideTo(targetSlide);
+}
+});
+});
+}, 1200);
+});
+// 优化：PPT按钮点击事件 - 单独初始化
+function initPptButtons() {
+const pptButtons = document.querySelectorAll('.ppt-button-small');
+pptButtons.forEach(button => {
+button.addEventListener('click', function(e) {
+e.stopPropagation();
+e.preventDefault();
+const pdfUrl = this.getAttribute('data-pdf');
+if (pdfUrl && confirm(`您即将查看【${getSystemNameFromUrl(pdfUrl)}】的详细PPT文件。\n文件将在新窗口中打开，建议在WiFi环境下查看。\n是否继续？`)) {
+window.open(pdfUrl, '_blank');
+}
+});
+});
+}
+// 辅助函数：从URL中提取系统名称
+function getSystemNameFromUrl(url) {
+const filename = url.split('/').pop().replace('.pdf', '');
+return filename.replace(/_/g, ' ').replace(/%20/g, ' ');
+}
+// 处理图片加载失败 - 确保logo显示
+document.addEventListener('DOMContentLoaded', function() {
+const logos = document.querySelectorAll('img[src="logo.png"]');
+logos.forEach(logo => {
+logo.onerror = function() {
+console.log('Logo加载失败，使用备用方案');
+this.style.backgroundColor = '#1a2a4a';
+this.style.display = 'flex';
+this.style.alignItems = 'center';
+this.style.justifyContent = 'center';
+this.style.color = '#4da6ff';
+this.style.fontWeight = 'bold';
+this.style.fontSize = '2.5rem';
+this.innerHTML = 'NS';
+this.onerror = null; // 防止无限循环
+};
+});
+});
+</script>
 </body>
 </html>
